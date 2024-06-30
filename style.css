@@ -60,3 +60,7 @@ body {
 .weather {
     margin-bottom: 30px;
 }
+
+.weather .details .col img {
+    width: 60px;
+}
