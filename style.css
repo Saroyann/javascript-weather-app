@@ -60,3 +60,8 @@ body {
 .weather {
     margin-bottom: 30px;
 }
+
+.weather img {
+width: 100px;
+height: 100px;
+}
