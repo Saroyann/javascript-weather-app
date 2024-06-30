@@ -39,3 +39,11 @@ body {
     flex: 1;
     margin-right: 16px;
 }
+
+.search button {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50%;
+    
+}
