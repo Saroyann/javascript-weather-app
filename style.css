@@ -104,3 +104,8 @@ body {
 color: white;
 text-align: center;
 }
+
+.footer .socmed a img {
+    width: 40px;
+    margin-top: 10px;
+}
