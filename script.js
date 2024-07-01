@@ -47,7 +47,6 @@ const checkWeather = async (city) => {
         elements.weather.style.display = 'block';
     } catch (error) {
         console.error(error);
-        alert('Gagal mendapatkan data cuaca. Silakan coba lagi.');
     }
 };
 
