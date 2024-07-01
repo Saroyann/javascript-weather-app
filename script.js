@@ -24,7 +24,7 @@ const checkWeather = async (city) => {
         document.querySelector('.wind').innerHTML = data.wind.speed + ` km/jam`;
 
         if(data.weather[0].main == 'Clouds') {
-            document.querySelector('.weather-icon').innerHTML = 
+            weatherIcon.src = ''
         }
 
     } catch (error) {
