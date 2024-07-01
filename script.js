@@ -1,33 +1,37 @@
-
-
 const apiKey = 'ba552efbe4a226aadcc20b0fa29f7878';
-const apiURL = 'https://api.openweathermap.org/data/2.5/weather?=&units=metric&q=samarinda';
+const apiBaseURL = 'https://api.openweathermap.org/data/2.5/weather';
 
 const searchBox = document.querySelector('.search input');
 const searchBtn = document.querySelector('.search button');
 
 const checkWeather = async (city) => {
-    const response = await fetch(apiURL + city + `&appid=${apiKey}`);
+    const apiURL = `${apiBaseURL}?q=${city}&units=metric&appid=${apiKey}`;
+    try {
+        const response = await fetch(apiURL);
 
-    let data = await response.json();
+        if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+        }
 
-    console.log(data);
+        const data = await response.json();
+        console.log(data);
 
-    document.querySelector('.city').innerHTML = data.name;
+        document.querySelector('.city').innerHTML = data.name;
+        document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + `°C`;
+        document.querySelector('.humidity').innerHTML = data.main.humidity + `%`;
+        document.querySelector('.wind').innerHTML = data.wind.speed + ` km/jam`;
 
-    document.querySelector('.temp').innerHTML = Math.round(data.main.temp)  + `°c`;
-
-    document.querySelector('.humidity').innerHTML = data.main.humidity + `%`;
-
-    document.querySelector('.wind').innerHTML = data.wind.speed + ` km/jam`;
-
-
+    } catch (error) {
+        console.error(error);
+        alert('Gagal mendapatkan data cuaca. Silakan coba lagi.');
+    }
 }
 
 searchBtn.addEventListener('click', () => {
-    checkWeather(searchBox.value);
-})
-
-
-
-
+    const city = searchBox.value.trim();
+    if (city) {
+        checkWeather(city);
+    } else {
+        alert('Masukkan nama kota yang valid.');
+    }
+});
