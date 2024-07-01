@@ -24,7 +24,12 @@ const checkWeather = async (city) => {
         document.querySelector('.wind').innerHTML = data.wind.speed + ` km/jam`;
 
         if(data.weather[0].main == 'Clouds') {
-            weatherIcon.src = ''
+            weatherIcon.src = 'https://github.com/Saroyann/javascript-weather-app/blob/master/img/cloudy.png?raw=true';
+
+        } else if(data.weather[0].main == 'rain') {
+            weatherIcon.src = 'https://github.com/Saroyann/javascript-weather-app/blob/master/img/rain.png?raw=true';
+        } else {
+            weatherIcon.src = '';
         }
 
     } catch (error) {
