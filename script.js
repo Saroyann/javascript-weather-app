@@ -31,6 +31,11 @@ const checkWeather = async (city) => {
         if (!response.ok) {
             throw new Error(`Error: ${response.statusText}`);
         }
+
+        if(response.status == 404) {
+            document.querySelector('.error').style.display = 'block';
+            document.querySelector('.weather').style.display = 'none';
+        }
         const data = await response.json();
 
         updateWeatherInfo(data);
