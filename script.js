@@ -32,12 +32,14 @@ const checkWeather = async (city) => {
             throw new Error(`Error: ${response.statusText}`);
         }
         const data = await response.json();
-        console.log(data);
+
         updateWeatherInfo(data);
     } catch (error) {
         console.error(error);
         alert('Gagal mendapatkan data cuaca. Silakan coba lagi.');
     }
+
+    document.querySelector('.weather').style.display='block';
 };
 
 searchBtn.addEventListener('click', () => {
