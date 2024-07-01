@@ -3,6 +3,10 @@ const apiURL = 'https://api.openweathermap.org/data/2.5/weather?=&units=metric&q
 
 const checkWeather = async () => {
     const response = await fetch(apiURL + `&appid${apiKey}`);
+
+    let data = await response.json();
+
+    console.log(data);
 }
 
 
