@@ -16,7 +16,7 @@ body {
     max-width: 470px;
     background: linear-gradient(135deg, #1679AB, #91DDCF);
     color: #fff;
-    margin: 90px auto;
+    margin: 50px auto;
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
@@ -98,4 +98,9 @@ body {
     font-size: 16px;
     margin-left: 15px;
     display: none;
+}
+
+.footer {
+color: white;
+text-align: center;
 }
