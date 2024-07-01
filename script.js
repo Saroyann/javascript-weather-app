@@ -28,8 +28,12 @@ const checkWeather = async (city) => {
 
         } else if(data.weather[0].main == 'rain') {
             weatherIcon.src = 'https://github.com/Saroyann/javascript-weather-app/blob/master/img/rain.png?raw=true';
-        } else {
+
+        } else if(data.weather[0].main == 'clear') {
             weatherIcon.src = 'https://github.com/Saroyann/javascript-weather-app/blob/master/img/sunny.png?raw=true';
+            
+        } else if(data.weather[0].main == 'Mist') {
+            weatherIcon.src = '';
         }
 
     } catch (error) {
