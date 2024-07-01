@@ -9,4 +9,6 @@ const checkWeather = async () => {
     console.log(data);
 }
 
+checkWeather();
+
 
