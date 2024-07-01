@@ -26,13 +26,16 @@ const checkWeather = async (city) => {
         if(data.weather[0].main == 'Clouds') {
             weatherIcon.src = 'https://github.com/Saroyann/javascript-weather-app/blob/master/img/cloudy.png?raw=true';
 
-        } else if(data.weather[0].main == 'rain') {
+        } else if(data.weather[0].main == 'Rain') {
             weatherIcon.src = 'https://github.com/Saroyann/javascript-weather-app/blob/master/img/rain.png?raw=true';
 
-        } else if(data.weather[0].main == 'clear') {
+        } else if(data.weather[0].main == 'Clear') {
             weatherIcon.src = 'https://github.com/Saroyann/javascript-weather-app/blob/master/img/sunny.png?raw=true';
-            
+
         } else if(data.weather[0].main == 'Mist') {
+            weatherIcon.src = 'https://github.com/Saroyann/javascript-weather-app/blob/master/img/mist.png?raw=true';
+
+        } else if (data.weather[0].main == 'Drizzle') {
             weatherIcon.src = '';
         }
 
